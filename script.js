@@ -45,20 +45,6 @@ const albums = [
     { name: "IGOR", image: "images/IGOR.png" },
     { name: "Flower Boy", image: "images/Flower Boy.jpg" },
     { name: "CALL ME IF YOU GET LOST", image: "images/CALL ME IF YOU GET LOST.png" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
-    { name: "", image: "images/" },
 ];
 
 const albumImage = document.getElementById('albumImage');
