@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Album Guessing Game</h1>
+        <button id="howToPlayButton">How to Play</button>
+        <div id="albumContainer" class="album-container">
+            <div class="image-container">
+                <img draggable="false" id="albumImage" src="" alt="Album Cover">
+            </div>
+        </div>
+        <p id="result"></p>
+        <div class="input-container">
+            <input type="text" id="guessInput" placeholder="Enter your guess">
+            <div class="button-container">
+                <button id="submitGuess">Submit Guess</button>
+                <button id="skipButton">Next</button>
+                <button id="giveUpButton">Show Answer</button>
+            </div>
+            <button id="startAgainButton" class="start-again-button" style="display: none;">Start Again</button>
+        </div>
+    </div>
+    <div id="howToPlayBox" class="how-to-play-box">
+        <h2>How to Play</h2>
+        <p id="howToPlayText">
+        Guess the rapper's album based on the blurred image.
+        You have 5 tries to get it right. With each guess the image will be less blurry.
+        If you can't guess it in 5 tries, the answer will be revealed.
+        Click "Next" to move to the next album.
+        </p>
+        <button id="closeHowToPlay">Close</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
