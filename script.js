@@ -1,5 +1,4 @@
 const albums = [
-    // { name: "", image: "images/" },
     { name: "Whole Lotta Red", image: "images/Whole Lotta Red.jpg" },
     { name: "Die Lit", image: "images/Die Lit.jpg" },
     { name: "Alexandria", image: "images/Alexandria.jpg" },
@@ -63,9 +62,15 @@ let tries = 0;
 const maxTries = 5;
 let correctGuesses = 0;
 let totalAlbums = 10;
+let displayedAlbums = new Set();
 
 function getRandomAlbum() {
-    return albums[Math.floor(Math.random() * albums.length)];
+    let randomIndex;
+    do {
+        randomIndex = Math.floor(Math.random() * albums.length);
+    } while (displayedAlbums.has(randomIndex));
+    displayedAlbums.add(randomIndex);
+    return randomIndex;
 }
 
 function displayAlbum(album) {
@@ -109,7 +114,7 @@ function nextAlbum() {
         albumImage.style.transition = 'none';
         blurLevel = 15;
         tries = 0;
-        currentAlbumIndex = Math.floor(Math.random() * albums.length);
+        currentAlbumIndex = getRandomAlbum();
         displayAlbum(albums[currentAlbumIndex]);
         result.textContent = "";
         guessInput.value = "";
@@ -140,7 +145,8 @@ function initGame() {
     tries = 0;
     totalAlbums = 10;
     correctGuesses = 0;
-    currentAlbumIndex = Math.floor(Math.random() * albums.length);
+    displayedAlbums.clear();
+    currentAlbumIndex = getRandomAlbum();
     displayAlbum(albums[currentAlbumIndex]);
     result.textContent = "";
     guessInput.value = "";
@@ -160,8 +166,6 @@ howToPlayButton.addEventListener('click', () => {
             howToPlayBox.style.display = 'none';
         }, 500);
     }
-    
-    
 });
 
 closeHowToPlay.addEventListener('click', () => {
@@ -170,8 +174,6 @@ closeHowToPlay.addEventListener('click', () => {
         howToPlayBox.style.display = 'none';
     }, 500);
 });
-
-
 
 startAgainButton.addEventListener('click', initGame);
 
