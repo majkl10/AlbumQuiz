@@ -72,7 +72,7 @@ restartButton.addEventListener('click', () => {
 
 confirmRestartButton.addEventListener('click', () => {
     restartConfirmationBox.style.display = 'none';
-    initGame(); // Call the initGame function to restart the game
+    initGame();
 });
 
 cancelRestartButton.addEventListener('click', () => {
@@ -85,10 +85,10 @@ let tries = 0;
 const maxTries = 5;
 let correctGuesses = 0;
 let totalRounds = 10;
-let currentRound = 1; // Track the current round
+let currentRound = 1;
 let displayedAlbums = new Set();
-let points = 0;  // To keep track of the player's points
-let streak = 0;  // To keep track of the player's streak
+let points = 0;
+let streak = 0;
 
 function getRandomAlbum() {
     let randomIndex;
@@ -116,11 +116,11 @@ function checkGuess() {
         submitGuess.disabled = true;
         albumImage.style.filter = 'blur(0px)';
         correctGuesses++;
-        points++;  // Add one point for a correct guess
-        streak++;  // Increment streak
+        points++;
+        streak++;
         updatePointsDisplay();
-        if (streak > 2) {  // If the player has a streak of 3 or more
-            points += (streak - 2);  // Add extra points based on the streak
+        if (streak > 2) { 
+            points += (streak - 2);
             updatePointsDisplay();
             streakText.textContent = `Streak: ${streak} (${streak - 2} bonus points)`;
         }
@@ -155,7 +155,7 @@ function nextAlbum() {
     totalRounds--;
     if (totalRounds > 0) {
         currentRound++;
-        roundNumber.textContent = "Round " + currentRound; // Update the round number display
+        roundNumber.textContent = "Round " + currentRound;
         document.getElementById('nextButton').style.display = 'none';
         guessInput.disabled = false;
         albumImage.style.transition = 'none';
@@ -180,10 +180,10 @@ function initGame() {
     blurLevel = 15;
     tries = 0;
     totalRounds = 10;
-    currentRound = 1; // Reset the current round
+    currentRound = 1;
     correctGuesses = 0;
-    points = 0;  // Reset points at the start of the game
-    streak = 0;  // Reset streak at the start of the game
+    points = 0;
+    streak = 0;
     displayedAlbums.clear();
     currentAlbumIndex = getRandomAlbum();
     displayAlbum(albums[currentAlbumIndex]);
@@ -191,7 +191,7 @@ function initGame() {
     guessInput.value = "";
     submitGuess.disabled = false;
     startAgainButton.style.display = 'none';
-    roundNumber.textContent = "Round 1"; // Reset the round number display
+    roundNumber.textContent = "Round 1";
     updatePointsDisplay();
     streakText.textContent = '';
     document.getElementById('nextButton').style.display = 'none';
