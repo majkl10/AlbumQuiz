@@ -9,21 +9,31 @@
 <body>
     <div class="container">
         <h1>Album Guessing Game</h1>
+        <button id="restartButton" class="restart-button">Restart Game</button>
         <button id="howToPlayButton">How to Play</button>
+        <div id="pointsDisplay" class="points-display">
+            <span id="points"></span><br>
+            <div id="streakText" class="streak-text"></div>
+        </div>
+
+        <div id="roundText" class="round-text">
+                <span id="roundNumber"></span>
+        </div>
+        
         <div id="albumContainer" class="album-container">
             <div class="image-container">
                 <img draggable="false" id="albumImage" src="" alt="Album Cover">
             </div>
         </div>
+        
         <p id="result"></p>
         <div class="input-container">
             <input type="text" id="guessInput" placeholder="Enter your guess">
             <div class="button-container">
                 <button id="submitGuess">Submit Guess</button>
-                <button id="skipButton">Next</button>
-                <button id="giveUpButton">Show Answer</button>
+                <button id="nextButton" style="display: none;">Next</button>
             </div>
-            <button id="startAgainButton" class="start-again-button" style="display: none;">Start Again</button>
+            <button id="startAgainButton" class="start-again-button" style="display: none;">Start Again</button>            
         </div>
     </div>
     <div id="howToPlayBox" class="how-to-play-box">
@@ -35,6 +45,15 @@
         Click "Next" to move to the next album.
         </p>
         <button id="closeHowToPlay">Close</button>
+    </div>
+    <div id="restartConfirmationBox" class="restart-confirmation-box">
+        <h2>Restart Game?</h2>
+        <p>Are you sure you want to restart the game?</p>
+        <p>You will lose your current points.</p>
+        <div class="button-container">
+            <button id="confirmRestartButton">Yes</button>
+            <button id="cancelRestartButton">Cancel</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

@@ -12,6 +12,7 @@ body {
 }
 
 .container {
+    position: relative;
     background-color: rgba(60, 60, 107, 0.95);
     padding: 40px; 
     border-radius: 10px;
@@ -23,7 +24,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    position: relative;
 }
 
 h1 {
@@ -119,8 +119,7 @@ button:hover {
 .how-to-play-box {
     display: none;
     position: absolute;
-    top: 20px;
-    right: 670px;
+    right: 35.5%;
     width: 500px;
     height: 200px;
     padding: 20px;
@@ -191,6 +190,75 @@ button:hover {
 
 .start-again-button:hover {
     background-color: #c82333;
+}
+
+.restart-confirmation-box {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.restart-confirmation-box h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+.restart-confirmation-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.restart-confirmation-box button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restart-confirmation-box button:hover {
+    background-color: #c82333;
+}
+
+.restart-button {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restart-button:hover {
+    background-color: #c82333;
+}
+
+#pointsDisplay {
+    position: relative;
+    width: 20%;
+    padding: 5px;
+    color: white;
+    font-size: 18px;
+    background-color: black;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.round-text {
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
 }
 
 
