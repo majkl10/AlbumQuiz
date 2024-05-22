@@ -121,7 +121,7 @@ button:hover {
     position: absolute;
     right: 35.5%;
     width: 500px;
-    height: 200px;
+    height: 245px;
     padding: 20px;
     background-color: rgb(245, 245, 245);
     border-radius: 10px;
@@ -261,4 +261,19 @@ button:hover {
     color: white;
 }
 
+
+.hello-vro {
+    position: absolute;
+    animation: slideInVro 5s forwards;
+    top: -100px;
+}
+
+@keyframes slideInVro {
+    from {
+        top: -500px;
+    }
+    to {
+        top: 150px;
+    }
+}
 

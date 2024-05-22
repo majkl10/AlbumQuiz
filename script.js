@@ -57,6 +57,7 @@ const submitGuess = document.getElementById('submitGuess');
 const result = document.getElementById('result');
 const howToPlayButton = document.getElementById('howToPlayButton');
 const howToPlayBox = document.getElementById('howToPlayBox');
+const helloVro = document.getElementById('helloVro');
 const startAgainButton = document.getElementById('startAgainButton');
 const restartButton = document.getElementById('restartButton');
 const restartConfirmationBox = document.getElementById('restartConfirmationBox');
@@ -144,6 +145,7 @@ function checkGuess() {
             }
         }
     }
+    
     guessInput.value = "";
 }
 
@@ -195,6 +197,7 @@ function initGame() {
     updatePointsDisplay();
     streakText.textContent = '';
     document.getElementById('nextButton').style.display = 'none';
+    helloVro.style.display = 'none';
 }
 
 submitGuess.addEventListener('click', checkGuess);
@@ -208,6 +211,17 @@ howToPlayButton.addEventListener('click', () => {
         setTimeout(() => {
             howToPlayBox.style.display = 'none';
         }, 500);
+    }
+});
+
+
+
+guessInput.addEventListener('input', () => {
+    const guess = guessInput.value.trim().toLowerCase();
+    if (guess === 'hello vro') {
+        helloVro.style.display = 'block';
+    } else {
+        helloVro.style.display = 'none';
     }
 });
 
