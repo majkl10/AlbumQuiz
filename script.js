@@ -47,7 +47,7 @@ const albums = [
     { names: ["We Love You Tecca 2", "WLYT2"], image: "images/We Love You Tecca 2.png" },
     { names: ["We Love You Tecca", "WLYT"], image: "images/We Love You Tecca.jpg" },
     { names: ["TEC"], image: "images/TEC.png" },
-    { names: ["HEROES & VILLAINS"], image: "images/HEROES VILLAINS.jpg" },
+    { names: ["HEROES & VILLAINS", "HEROES AND VILLAINS"], image: "images/HEROES VILLAINS.jpg" },
     { names: ["NOT ALL HEROES WEAR CAPES", "NAHWC"], image: "images/NOT ALL HEROES WEAR CAPES.png" },
 ];
 
@@ -174,6 +174,12 @@ function nextAlbum() {
         submitGuess.disabled = true;
         startAgainButton.style.display = 'block';
     }
+    if(correctGuesses === 10) {
+        result.textContent = `Congratulations! You guessed all 10 albums correctly and earned ${points} points. wait ur goated.`;
+        guessInput.disabled = true;
+        submitGuess.disabled = true;
+        startAgainButton.style.display = 'block';
+    }
 }
 
 function initGame() {
@@ -214,8 +220,6 @@ howToPlayButton.addEventListener('click', () => {
     }
 });
 
-
-
 guessInput.addEventListener('input', () => {
     const guess = guessInput.value.trim().toLowerCase();
     if (guess === 'hello vro') {
@@ -231,6 +235,14 @@ closeHowToPlay.addEventListener('click', () => {
         howToPlayBox.style.display = 'none';
     }, 500);
 });
+
+guessInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault();
+        checkGuess();
+    }
+});
+
 
 document.getElementById('nextButton').addEventListener('click', nextAlbum);
 startAgainButton.addEventListener('click', initGame);
