@@ -36,16 +36,37 @@ h1 {
     position: absolute;
     top: 20px;
     right: 20px;
-    padding: 10px 20px;
-    background-color: #ffc107;
-    color: black;
-    border: none;
-    border-radius: 5px;
+    background-color: #fff000;
+    border-radius: 12px;
+    color: #000;
     cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    transition: 200ms;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
-#howToPlayButton:hover {
-    background-color: #e0a800;
+#howToPlayButton:not(:disabled):hover,
+#howToPlayButton:not(:disabled):focus {
+    outline: 0;
+    background: #bdb40c;
+    box-shadow: 0 0 0 2px rgba(0,0,0,.2), 0 3px 8px 0 rgba(0,0,0,.15);
+}
+
+#howToPlayButton:active{
+    background: #000000;
+}
+
+#howToPlayButton:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
 }
 
 .album-container {
@@ -116,6 +137,9 @@ button:hover {
     color: white;
 }
 
+
+
+
 .how-to-play-box {
     display: none;
     position: absolute;
@@ -170,12 +194,50 @@ button:hover {
     font-size: 16px;
 }
 
-#submitGuess {
-    background-color: #28a745;
-}
-
-#submitGuess:hover {
-    background-color: #218838;
+#submitGuess{
+    background-image: linear-gradient(#42ec67, #00c92c);
+    border: 1px solid #00cc4e;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: #ffffff;
+    cursor: pointer;
+    direction: ltr;
+    display: block;
+    font-family: "SF Pro Text","SF Pro Icons","AOS Icons","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    letter-spacing: -.022em;
+    line-height: 1.47059;
+    min-width: 30px;
+    overflow: visible;
+    padding: 4px 15px;
+    text-align: center;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+}    
+  
+  #submitGuess:disabled {
+    cursor: default;
+    opacity: .3;
+  }
+  
+  #submitGuess:hover {
+    background-image: linear-gradient(#76f191, #2bb84a);
+    border-color: #53d45e;
+    text-decoration: none;
+  }
+  
+  #submitGuess:active {
+    background-image: linear-gradient(#5fb973, #23923b);
+    border-color: #53d45e;
+    outline: none;
+  }
+  
+  #submitGuess:focus {
+    box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+    outline: none;
 }
 
 .start-again-button {
@@ -191,6 +253,10 @@ button:hover {
 .start-again-button:hover {
     background-color: #c82333;
 }
+
+
+
+
 
 .restart-confirmation-box {
     display: none;
@@ -232,12 +298,20 @@ button:hover {
     position: absolute;
     top: 20px;
     left: 20px;
-    padding: 10px 20px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    background-color: #f32626;
+    border-radius: 12px;
+    color: #000;
     cursor: pointer;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    transition: 200ms;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
 }
 
 .restart-button:hover {
