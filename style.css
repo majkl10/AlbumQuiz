@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "customFont";
+    src: url(customFont.otf);
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -13,7 +18,7 @@ body {
 
 .container {
     position: relative;
-    background-color: rgba(60, 60, 107, 0.95);
+    background-color: rgba(41, 41, 46, 0.95);
     padding: 40px; 
     border-radius: 10px;
     box-shadow: 0 4px 7px rgba(0, 0, 0, 1);
@@ -26,10 +31,12 @@ body {
     justify-content: space-between;
 }
 
-h1 {
+.nadpis {
     margin-top: 0;
-    font-size: 24px;
-    color: white;
+    font-size: 30px;
+    letter-spacing: 2px;
+    color: rgb(202, 202, 202);
+    font-family: customFont;
 }
 
 #howToPlayButton {
@@ -93,6 +100,8 @@ h1 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     filter: blur(15px);
     transition: filter 0.3s;
+    -webkit-user-select: none;
+    user-select: none;
     -webkit-user-drag: none;
 }
 
@@ -145,7 +154,7 @@ button:hover {
     position: absolute;
     right: 35.5%;
     width: 500px;
-    height: 245px;
+    height: 290px;
     padding: 20px;
     background-color: rgb(245, 245, 245);
     border-radius: 10px;
@@ -160,6 +169,10 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#closeHowToPlay:active {
+    background-color: #c82333;
 }
 
 #howToPlayText{

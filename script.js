@@ -49,6 +49,7 @@ const albums = [
     { names: ["TEC"], image: "images/TEC.png" },
     { names: ["HEROES & VILLAINS", "HEROES AND VILLAINS"], image: "images/HEROES VILLAINS.jpg" },
     { names: ["NOT ALL HEROES WEAR CAPES", "NAHWC"], image: "images/NOT ALL HEROES WEAR CAPES.png" },
+    { names: ["american dream"], image: "images/american dream.jpg" },
 ];
 
 const albumImage = document.getElementById('albumImage');
@@ -66,6 +67,7 @@ const cancelRestartButton = document.getElementById('cancelRestartButton');
 const pointsDisplay = document.getElementById('pointsDisplay');
 const streakText = document.getElementById('streakText');
 const roundNumber = document.getElementById('roundNumber');
+const audio = new Audio('images/SnowHeaven.mp3');
 
 restartButton.addEventListener('click', () => {
     restartConfirmationBox.style.display = 'block';
@@ -168,6 +170,7 @@ function nextAlbum() {
         result.textContent = "";
         guessInput.value = "";
         submitGuess.disabled = false;
+
     } else {
         result.textContent = `Game over! You guessed ${correctGuesses} out of 10 correctly and earned ${points} points.`;
         guessInput.disabled = true;
@@ -224,10 +227,16 @@ guessInput.addEventListener('input', () => {
     const guess = guessInput.value.trim().toLowerCase();
     if (guess === 'hello vro') {
         helloVro.style.display = 'block';
+        audio.play();
+        audio.volume = 0.5;
     } else {
         helloVro.style.display = 'none';
+        audio.pause();
+        audio.currentTime = 0;
     }
+    
 });
+
 
 closeHowToPlay.addEventListener('click', () => {
     howToPlayBox.style.animation = 'slideOut 0.5s forwards';
