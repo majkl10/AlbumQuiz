@@ -228,7 +228,7 @@ guessInput.addEventListener('input', () => {
     if (guess === 'hello vro') {
         helloVro.style.display = 'block';
         audio.play();
-        audio.volume = 0.5;
+        audio.volume = 0.1;
     } else {
         helloVro.style.display = 'none';
         audio.pause();
